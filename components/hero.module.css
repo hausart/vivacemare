@@ -1,0 +1,45 @@
+.hero { position: sticky; z-index: 0; top: 0; display: block; height: 100vh; min-height: 760px; overflow: hidden; isolation: isolate; background: var(--color-navy); color: #fff; }
+.backgroundImage { z-index: -2; object-fit: cover; object-position: center; animation: heroZoom 14s ease-in-out infinite alternate; transform-origin: center; will-change: transform; }
+.overlay { position: absolute; z-index: -1; inset: 0; background: linear-gradient(250.709deg, rgb(29 33 67 / 0%) 42.055%, rgb(8 28 54 / 73%) 78.921%); mix-blend-mode: multiply; }
+.shell { position: relative; width: min(calc(100% - 48px), 1240px); min-height: inherit; margin: 0 auto; }
+.copy { position: relative; z-index: 3; width: 620px; padding-top: 369px; }
+.copy h1 { max-width: 620px; margin: 0; font-family: var(--font-display); font-size: 75px; font-weight: 300; letter-spacing: -3.5px; line-height: 1.08; text-wrap: balance; }
+.description { width: 570px; margin: 7px 0 0; color: #ced9e2; font-size: 17px; font-weight: 400; letter-spacing: -0.05px; line-height: 1.6; }
+.primaryCta { position: relative; display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 0; margin-top: 36px; padding: 0 48px; border: 1px solid transparent; border-radius: 16px; background: var(--color-gold); color: #0e2339; font-size: 16px; font-weight: 400; letter-spacing: -0.05px; line-height: 1.2; text-decoration: none; transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease, transform 180ms ease; }
+.primaryCta:hover, .primaryCta:focus-visible { border-color: rgb(255 255 255 / 72%); background: transparent; color: #fff; box-shadow: 0 8px 20px rgb(3 20 39 / 20%); transform: translateY(-1px); }
+.ctaArrow { position: absolute; right: 18px; width: 16px; overflow: visible; opacity: 0; transform: translateX(-4px); transition: opacity 180ms ease, transform 180ms ease; line-height: 1; }
+.primaryCta:hover .ctaArrow, .primaryCta:focus-visible .ctaArrow { opacity: 1; transform: translateX(0); }
+@keyframes heroZoom { from { transform: scale(1); } to { transform: scale(1.1); } }
+@media (max-width: 900px) { .hero { height: 100svh; min-height: 720px; } .shell { width: min(calc(100% - 32px), 680px); } .copy { width: min(100%, 620px); padding-top: 300px; } .description { width: min(100%, 570px); } }
+@media (max-width: 560px) { .hero { display: flex; height: auto; min-height: 0; flex-direction: column; } .shell { position: relative; z-index: 1; order: 1; width: 100%; min-height: 0; background: var(--color-navy); } .shell::after { position: absolute; z-index: 2; right: 0; bottom: -112px; left: 0; height: 178px; background: linear-gradient(180deg, var(--color-navy) 0%, rgb(8 28 54 / 88%) 34%, rgb(8 28 54 / 44%) 66%, transparent 100%); content: ''; pointer-events: none; } .backgroundImage { position: relative !important; z-index: 0; inset: auto !important; order: 2; display: block; width: 100% !important; height: 360px !important; object-position: 62% 52%; object-fit: cover; animation: none; transform: none; filter: brightness(.82); } .overlay { display: none; } .copy { width: min(calc(100% - 32px), 620px); margin-inline: auto; padding: 116px 0 52px; } .copy h1 { max-width: 345px; font-size: clamp(42px, 11.5vw, 50px); letter-spacing: -2px; line-height: 1.07; } .description { width: min(100%, 350px); margin-top: 14px; color: rgb(235 242 247 / 92%); font-size: 14px; line-height: 1.55; } .primaryCta { margin-top: 28px; padding-inline: 20px; box-shadow: 0 8px 24px rgb(3 20 39 / 24%); } }
+@media (prefers-reduced-motion: reduce) { .backgroundImage { animation: none; } }
+
+@media (max-width: 560px) {
+  .copy {
+    padding-top: 96px;
+    padding-bottom: 36px;
+  }
+
+  .backgroundImage {
+    height: 380px !important;
+    object-position: 62% 42%;
+  }
+}
+
+@media (max-width: 560px) and (max-height: 720px) {
+  .copy {
+    padding-top: 82px;
+    padding-bottom: 28px;
+  }
+
+  .backgroundImage {
+    height: 320px !important;
+    object-position: 62% 38%;
+  }
+}
+
+@media (max-width: 560px) {
+  .primaryCta {
+    padding-right: 48px;
+  }
+}

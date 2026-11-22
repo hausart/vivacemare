@@ -1,0 +1,70 @@
+.section { position: relative; z-index: 2; overflow: hidden; padding: 82px 0 108px; background: var(--color-paper); color: var(--color-ink); }
+.header { width: min(calc(100% - 48px), 1240px); margin: 0 auto; }
+.eyebrow { margin: 0 0 14px; color: var(--color-gold-dark, #8c6c3f); font-size: 11px; font-weight: 600; letter-spacing: 2px; line-height: 1.3; text-transform: uppercase; }
+.header h2 { max-width: 620px; margin: 0; font-size: 48px; font-weight: 400; letter-spacing: -1.8px; line-height: 1.13; }
+.description { max-width: 570px; margin: 12px 0 0; color: var(--color-ink); font-size: 17px; letter-spacing: -0.05px; line-height: 1.6; }
+.scrollerShell { position: relative; overflow: hidden; margin-top: 34px; }
+.scrollerShell::before, .scrollerShell::after { position: absolute; z-index: 2; top: 0; bottom: 0; width: 64px; content: ''; pointer-events: none; }
+.scrollerShell::before { left: 0; background: linear-gradient(90deg, var(--color-paper) 0%, rgb(255 254 251 / 74%) 40%, rgb(255 254 251 / 0%) 100%); }
+.scrollerShell::after { right: 0; background: linear-gradient(270deg, var(--color-paper) 0%, rgb(255 254 251 / 74%) 40%, rgb(255 254 251 / 0%) 100%); }
+.scroller { display: flex; gap: 16px; overflow-x: auto; overflow-y: hidden; margin-top: 0; padding: 0 max(24px, calc((100vw - 1240px) / 2)); cursor: grab; scrollbar-width: none; scroll-snap-type: x mandatory; touch-action: pan-y; user-select: none; }
+.isDragging { cursor: grabbing; scroll-snap-type: none; }
+.scroller::-webkit-scrollbar { display: none; }
+.cardItem { flex: 0 0 335px; min-width: 335px; scroll-snap-align: start; transition: flex-basis 980ms cubic-bezier(.22,1,.36,1), min-width 980ms cubic-bezier(.22,1,.36,1), width 980ms cubic-bezier(.22,1,.36,1); }
+.cardItemExpanded { flex-basis: 820px; width: 820px; min-width: 820px; }
+.card { position: relative; display: block; width: 100%; height: 420px; overflow: hidden; padding: 0; border: 0; border-radius: 14px; background: var(--color-navy); color: white; cursor: pointer; text-align: left; }
+.cardImage, .modalImage { object-fit: cover; }
+.cardOverlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgb(8 28 54 / 0%) 28%, rgb(0 0 0 / 78%) 100%); transition: background 220ms ease; }
+.card:hover .cardOverlay, .card:focus-visible .cardOverlay { background: linear-gradient(180deg, rgb(8 28 54 / 10%) 18%, rgb(8 28 54 / 92%) 100%); }
+.cardContent { position: absolute; right: 24px; bottom: 24px; left: 24px; display: flex; flex-direction: column; align-items: flex-start; }
+.cardTitle { font-size: 28px; font-weight: 600; line-height: 1.2; }
+.cardDescription { min-height: 54px; margin-top: 6px; font-size: 17px; letter-spacing: -0.05px; line-height: 1.6; }
+.cardCta, .modalCta { position: relative; display: inline-flex; min-height: 44px; align-items: center; justify-content: center; gap: 0; margin-top: 12px; padding: 10px 48px; border: 1px solid transparent; border-radius: 10px; background: var(--color-gold); color: #0e2339; font-size: 16px; line-height: 1.2; transition: background 180ms ease, color 180ms ease, border-color 180ms ease; }
+.card:hover .cardCta, .card:focus-visible .cardCta { gap: 10px; border-color: rgb(255 255 255 / 72%); background: transparent; color: white; }
+.modalCta:hover, .modalCta:focus-visible { border-color: var(--color-blue); background: transparent; color: var(--color-blue); }
+.cardCta span, .modalCta span { position: absolute; right: 18px; display: inline-flex; width: 16px; align-items: center; justify-content: center; overflow: visible; opacity: 0; transform: translateX(-4px); transition: opacity 180ms ease, transform 180ms ease; }
+.card:hover .cardCta span, .card:focus-visible .cardCta span, .modalCta:hover span, .modalCta:focus-visible span { opacity: 1; transform: translateX(0); }
+.expandedCard { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 28px; width: 820px; min-height: 420px; overflow: hidden; border: 1px solid var(--color-border); border-radius: 20px; background: var(--color-secondary); color: var(--color-ink); animation: expandedCardIn 980ms cubic-bezier(.22,1,.36,1) both; }
+.expandedMedia { position: relative; min-height: 320px; overflow: hidden; }
+.expandedContent { padding: 28px 32px 28px 0; }
+.inlinePanelHeader { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+.expandedContent h3 { margin: 0; font-size: 30px; font-weight: 400; letter-spacing: -1px; line-height: 1.15; }
+.expandedContent p { margin: 18px 0 20px; font-size: 16px; line-height: 1.55; }
+.expandedContent strong { font-size: 15px; }
+.expandedContent ul { margin: 4px 0 0; padding-left: 20px; font-size: 15px; line-height: 1.5; }
+.investmentExpanded .expandedContent ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 28px; }
+.inlineClose { display: inline-grid; width: 34px; height: 34px; flex: 0 0 34px; place-items: center; border: 0; border-radius: 50%; background: rgb(19 43 66 / 8%); color: var(--color-ink); font-size: 24px; line-height: 1; cursor: pointer; }
+.inlineActions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 22px; }
+.controls { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 20px; }
+.controlIndicator { width: 42px; height: 5px; padding: 0; border: 0; border-radius: 999px; background: var(--color-gold); cursor: pointer; transition: background 180ms ease, opacity 180ms ease, transform 180ms ease; }
+.controlIndicator:hover, .controlIndicator:focus-visible { opacity: .78; transform: translateY(-1px); }
+.activeIndicator { background: var(--color-blue); }
+.controlButton { display: inline-grid; width: 40px; height: 32px; place-items: center; border: 1px solid var(--color-gold); border-radius: 10px; background: transparent; color: var(--color-ink); font-size: 18px; line-height: 1; cursor: pointer; transition: background 180ms ease, color 180ms ease, transform 180ms ease; }
+.controlButton:hover, .controlButton:focus-visible { background: var(--color-gold); color: #0e2339; transform: translateY(-1px); }
+.nextControl { border-color: var(--color-blue); background: var(--color-blue); color: white; }
+.nextControl:hover, .nextControl:focus-visible { background: var(--color-indigo); color: white; }
+.modalLayer { position: fixed; z-index: 30; inset: 0; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgb(5 17 31 / 48%); animation: overlayIn 260ms ease both; }
+.modalLayerClosing { animation: overlayOut 260ms ease both; }
+.modal { position: relative; display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: 44px; width: min(848px, 100%); max-height: min(720px, calc(100vh - 48px)); overflow: auto; padding: 32px; border-radius: 24px; background: var(--color-paper); box-shadow: 0 24px 80px rgb(3 20 39 / 24%); animation: sheetIn 420ms cubic-bezier(.22,1,.36,1) both; }
+.modalClosing { animation: sheetOut 260ms ease both; }
+.closeButton { position: absolute; top: 14px; right: 16px; z-index: 1; width: 36px; height: 36px; border: 0; border-radius: 50%; background: rgb(19 43 66 / 8%); color: var(--color-ink); font-size: 26px; line-height: 1; cursor: pointer; }
+.modalMedia { position: relative; min-height: 344px; overflow: hidden; border-radius: 22px; }
+.modalContent { padding: 8px 18px 8px 0; }
+.modalContent h3 { margin: 0; font-size: 32px; font-weight: 400; letter-spacing: -1px; line-height: 1.2; }
+.modalContent p { margin: 18px 0 24px; font-size: 16px; line-height: 1.55; }
+.modalContent strong { font-size: 16px; }
+.modalContent ul { margin: 4px 0 0; padding-left: 22px; font-size: 16px; line-height: 1.5; }
+.modalActions { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 18px; }
+.modalCta { gap: 10px; margin-top: 0; padding: 10px 48px; font-size: 16px; text-decoration: none; }
+.modalNavigation { display: flex; gap: 8px; }
+.modalNavigation button { display: inline-grid; width: 38px; height: 34px; place-items: center; border: 1px solid var(--color-blue); border-radius: 10px; background: var(--color-blue); color: white; font-size: 18px; cursor: pointer; transition: opacity 180ms ease, background 180ms ease; }
+.modalNavigation button:hover:not(:disabled), .modalNavigation button:focus-visible:not(:disabled) { background: var(--color-indigo); }
+.modalNavigation button:disabled { opacity: 0.32; cursor: not-allowed; }
+@keyframes overlayIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes overlayOut { from { opacity: 1; } to { opacity: 0; } }
+@keyframes sheetIn { from { opacity: 0; transform: translateY(100%); } to { opacity: 1; transform: translateY(0); } }
+@keyframes sheetOut { from { opacity: 1; transform: translateY(0); } to { opacity: 0; transform: translateY(100%); } }
+@keyframes inlinePanelIn { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes expandedCardIn { from { opacity: .7; transform: translateX(-18px); } to { opacity: 1; transform: translateX(0); } }
+@media (max-width: 800px) { .section { padding-top: 64px; padding-bottom: 88px; } .header { width: min(calc(100% - 32px), 620px); } .header h2 { font-size: 40px; } .scrollerShell { margin-top: 28px; } .scrollerShell::before, .scrollerShell::after { display: none; } .scroller { gap: 12px; padding-inline: max(16px, calc((100vw - 78vw) / 2)); } .cardItem { flex-basis: 78vw; min-width: 78vw; scroll-snap-align: center; } .card { height: 400px; } .cardTitle { font-size: 24px; } .cardDescription { min-height: 0; font-size: 16px; line-height: 1.5; } .cardCta { min-height: 42px; font-size: 15px; } .cardItemExpanded { flex-basis: 78vw; width: 78vw; min-width: 78vw; } .expandedCard { grid-template-columns: 1fr; width: 78vw; min-height: 0; gap: 0; } .investmentExpanded .expandedContent ul { grid-template-columns: 1fr; } .expandedMedia { min-height: 260px; } .expandedContent { padding: 22px; } .modalLayer { padding: 12px; } .modal { grid-template-columns: 1fr; gap: 22px; max-height: calc(100vh - 24px); padding: 20px; border-radius: 22px; } .modalMedia { min-height: 220px; max-height: 300px; } .modalContent { padding: 0 4px 12px; } .modalActions { align-items: flex-start; flex-direction: column; } }
+@media (prefers-reduced-motion: reduce) { .modalLayer, .modal, .modalLayerClosing, .modalClosing, .expandedCard { animation-duration: 1ms; } .cardItem, .cardCta, .modalCta, .cardCta span, .modalCta span { transition: none; } }

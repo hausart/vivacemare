@@ -1,0 +1,72 @@
+:root {
+  --color-blue: #0f416f;
+  --color-indigo: #1d2143;
+  --color-navy: #081c36;
+  --color-ink: #132b42;
+  --color-gold: #c3a47b;
+  --color-gold-light: #e3c69e;
+  --color-paper: #fffefb;
+  --color-secondary: #f7f8f6;
+  --color-mist: #b6c9d5;
+  --color-border: #d6e1e6;
+  --color-glass: #e8eef2;
+  --radius-button: 14px;
+  --radius-card: 24px;
+  --font-inter: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-inter);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+}
+
+.blurUpTitle { opacity: 0; filter: blur(10px); transform: translateY(22px); }
+.blurUpTitleVisible { animation: blurUpTitle 720ms cubic-bezier(.22,1,.36,1) both; }
+.sectionReveal { animation: sectionReveal 820ms cubic-bezier(.22,1,.36,1) both; }
+.revealBlock { opacity: 0; transform: translateY(28px); }
+.revealBlockVisible { animation: slideUpBlock 780ms cubic-bezier(.22,1,.36,1) var(--reveal-delay, 0ms) both; }
+@keyframes blurUpTitle { from { opacity: 0; filter: blur(10px); transform: translateY(22px); } to { opacity: 1; filter: blur(0); transform: translateY(0); } }
+@keyframes sectionReveal { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes slideUpBlock { from { opacity: 0; filter: blur(6px); transform: translate(var(--reveal-x, 0px), 28px) scale(var(--reveal-scale, 1)); } to { opacity: 1; filter: blur(0); transform: translate(0, 0) scale(1); } }
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--color-gold-light);
+  outline-offset: 4px;
+}
+
+.placeholderSection {
+  display: grid;
+  min-height: 220px;
+  place-items: center;
+  background: var(--color-navy);
+  color: white;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.placeholderSectionLight {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .blurUpTitle, .sectionReveal, .revealBlock, .revealBlockVisible { animation: none; opacity: 1; filter: none; transform: none; }
+}
