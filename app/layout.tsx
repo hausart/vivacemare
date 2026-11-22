@@ -24,9 +24,9 @@ export const metadata: Metadata = {
       'Assessoria de investimentos com visão 360° para pessoas físicas, empresas e clientes Private.',
     images: [
       {
-        url: '/og-image.png',
-        width: 3840,
-        height: 2158,
+        url: '/og-whatsapp.jpg',
+        width: 1200,
+        height: 630,
         alt: 'Vivacemare Investimentos',
       },
     ],
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: 'Vivacemare | Assessoria de investimentos',
     description:
       'Assessoria de investimentos com visão 360° para pessoas físicas, empresas e clientes Private.',
-    images: ['/og-image.png'],
+    images: ['/og-whatsapp.jpg'],
   },
   icons: {
     icon: '/favicon.png',
