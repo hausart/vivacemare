@@ -5,6 +5,7 @@ import { siteCopy } from '@/content/site-copy';
 import styles from './vivacemare-section.module.css';
 import { RevealTitle } from './reveal-title';
 import { RevealBlock } from './reveal-block';
+import { assetPath } from '@/lib/asset-path';
 
 export function VivacemareSection() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -64,7 +65,7 @@ export function VivacemareSection() {
       <RevealBlock className={styles.media} delay={120}>
         <video
           className={styles.video}
-          src="/assets/video-logo.mp4"
+          src={assetPath('/assets/video-logo.mp4')}
           autoPlay
           loop
           muted

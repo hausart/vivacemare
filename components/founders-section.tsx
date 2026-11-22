@@ -3,24 +3,25 @@ import type React from 'react';
 import { RevealBlock } from './reveal-block';
 import { RevealTitle } from './reveal-title';
 import styles from './founders-section.module.css';
+import { assetPath } from '@/lib/asset-path';
 
 const founders = [
   {
     name: 'Alexandre Ribas',
     role: 'SÓCIO FUNDADOR',
-    image: '/assets/fundadores/alexandre.png',
+    image: assetPath('/assets/fundadores/alexandre.png'),
     description: 'Com mais de 25 anos de experiência no mercado. Sua trajetória inclui posições em instituições como Itaú Unibanco, Safra, HSBC, Citi e XP Inc., com experiência em relacionamento, private banking e assessoria de investimentos. É formado em Administração pela Universidade São Marcos e possui certificação Ancord. Atualmente, dedica-se à construção de soluções financeiras personalizadas para pessoas físicas, clientes private e empresas.',
   },
   {
     name: 'Janaina Oliveira',
     role: 'SÓCIA FUNDADORA',
-    image: '/assets/fundadores/janaina.png',
+    image: assetPath('/assets/fundadores/janaina.png'),
     description: 'Com mais de 25 anos de experiência no mercado financeiro, com sólida atuação em bancos e foco na identificação de soluções adequadas às necessidades dos clientes. Reconhecida por sua dedicação, visão de equipe e orientação para resultados, combina relacionamento próximo e conhecimento técnico em sua atuação. Tem formação ligada à Escola de Negócios e Seguros — ENS e certificação Ancord e Susep.',
   },
   {
     name: 'André Rocha',
     role: 'SÓCIO FUNDADOR',
-    image: '/assets/fundadores/andre.png',
+    image: assetPath('/assets/fundadores/andre.png'),
     description: 'Com mais de 25 anos de experiência no setor bancário, com passagens por instituições como Banco Real, Santander e Safra. Sua experiência concentra-se em clientes pessoa jurídica, middle market, gestão comercial e relacionamento empresarial. É formado em Administração, possui MBA em Gestão Empresarial pela Fundação Getulio Vargas e certificações CEA e CPA-20 pela Anbima. Na Vivacemare, atua especialmente na estruturação financeira e no crescimento sustentável de empresas.',
   },
 ] as const;

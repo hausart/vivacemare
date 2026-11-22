@@ -2,13 +2,14 @@ import Image from 'next/image';
 import { whatsappHref } from '@/lib/whatsapp';
 import { RevealBlock } from './reveal-block';
 import styles from './time-value-section.module.css';
+import { assetPath } from '@/lib/asset-path';
 
 export function TimeValueSection() {
   return (
     <section className={styles.section} id="tempo" aria-labelledby="time-value-title">
       <Image
         className={styles.backgroundImage}
-        src="/assets/tempo-watch.png"
+        src={assetPath('/assets/tempo-watch.png')}
         alt="Relógio mecânico de luxo em tons de cobre e azul-marinho"
         fill
         sizes="(max-width: 900px) 100vw, 74vw"

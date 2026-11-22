@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './site-footer.module.css';
+import { assetPath } from '@/lib/asset-path';
 
 function WhatsAppIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.5 4.2 1.6 6L.2 24l6.3-1.7a11.8 11.8 0 0 0 5.6 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.3-6.2-3.5-8.4Zm-8.4 18.1h-.1a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.2 6.4 6.5 2.1 12.1 2.1c2.7 0 5.1 1 7 2.9a9.8 9.8 0 0 1 2.9 7c0 5.4-4.4 9.6-9.9 9.6Zm5.4-7.2c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.7.2-.2.3-.8.9-1 1.1-.2.2-.4.2-.7.1-2-.9-3.3-1.6-4.6-3.7-.4-.7.4-.7 1.1-2.2.1-.2 0-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1 2.9 1.2 3.1c.2.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.5-.1 1.7-.7 1.9-1.4.3-.7.3-1.3.2-1.1Z" /></svg>;
@@ -19,9 +20,9 @@ export function SiteFooter() {
       <div className={styles.inner}>
         <div className={styles.topRow}>
           <div className={styles.brands} aria-label="Vivacemare Investimentos e Safra Invest">
-            <Image src="/assets/logo-vivace-light.svg" alt="Vivacemare Investimentos" width={184} height={28} />
+            <Image src={assetPath('/assets/logo-vivace-light.svg')} alt="Vivacemare Investimentos" width={184} height={28} />
             <span className={styles.divider} aria-hidden="true" />
-            <Image src="/assets/logo-safra-light.svg" alt="Safra Invest" width={166} height={25} />
+            <Image src={assetPath('/assets/logo-safra-light.svg')} alt="Safra Invest" width={166} height={25} />
           </div>
           <nav className={styles.socials} aria-label="Redes sociais">
             <a href="https://wa.me/5513992056715" target="_blank" rel="noreferrer" aria-label="WhatsApp"><WhatsAppIcon /></a>

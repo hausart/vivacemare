@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { RevealBlock } from './reveal-block';
 import styles from './media-highlight-section.module.css';
+import { assetPath } from '@/lib/asset-path';
 
 const articleUrl = 'https://g1.globo.com/sp/santos-regiao/especial-publicitario/vivace-mare/noticia/2025/07/28/relacionamento-constroi-patrimonio.ghtml';
 
@@ -22,7 +23,7 @@ export function MediaHighlightSection() {
 
         <RevealBlock className={styles.article} delay={120}>
           <Image
-            src="/assets/midia/g1-relacionamento-constroi-patrimonio.png"
+            src={assetPath('/assets/midia/g1-relacionamento-constroi-patrimonio.png')}
             alt="Matéria do g1: Relacionamento constrói patrimônio"
             fill
             sizes="(max-width: 900px) 100vw, 662px"

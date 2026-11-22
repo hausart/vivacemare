@@ -5,6 +5,7 @@ import { type PointerEvent, useEffect, useRef, useState } from 'react';
 import { siteCopy } from '@/content/site-copy';
 import styles from './solutions-section.module.css';
 import { whatsappHref } from '@/lib/whatsapp';
+import { assetPath } from '@/lib/asset-path';
 import { RevealTitle } from './reveal-title';
 import { RevealBlock } from './reveal-block';
 
@@ -233,7 +234,7 @@ export function SolutionsSection() {
               {expanded?.title === solution.title ? (
                 <article className={`${styles.expandedCard} ${solution.title === 'Investimentos' ? styles.investmentExpanded : ''}`} aria-labelledby={`solution-inline-title-${solution.title}`}>
                   <div className={styles.expandedMedia}>
-                    <Image src={solution.image} alt="" fill sizes="(max-width: 800px) 78vw, 320px" quality={100} className={styles.modalImage} />
+                    <Image src={assetPath(solution.image)} alt="" fill sizes="(max-width: 800px) 78vw, 320px" quality={100} className={styles.modalImage} />
                   </div>
                   <div className={styles.expandedContent}>
                     <div className={styles.inlinePanelHeader}>
@@ -264,7 +265,7 @@ export function SolutionsSection() {
                     expandSolution(solution, event.currentTarget);
                   }}
                 >
-                  <Image src={solution.image} alt="" fill sizes="(max-width: 800px) 78vw, 335px" quality={100} className={styles.cardImage} />
+                  <Image src={assetPath(solution.image)} alt="" fill sizes="(max-width: 800px) 78vw, 335px" quality={100} className={styles.cardImage} />
                   <span className={styles.cardOverlay} aria-hidden="true" />
                   <span className={styles.cardContent}>
                     <span className={styles.cardTitle}>{solution.title}</span>
@@ -307,7 +308,7 @@ export function SolutionsSection() {
               ×
             </button>
             <div className={styles.modalMedia}>
-              <Image src={selected.image} alt="" fill sizes="(max-width: 760px) 100vw, 280px" quality={100} className={styles.modalImage} />
+              <Image src={assetPath(selected.image)} alt="" fill sizes="(max-width: 760px) 100vw, 280px" quality={100} className={styles.modalImage} />
             </div>
             <div className={styles.modalContent}>
               <h3 id="solution-modal-title">{selected.title}</h3>

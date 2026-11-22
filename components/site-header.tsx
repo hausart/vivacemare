@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { siteCopy } from '@/content/site-copy';
 import styles from './site-header.module.css';
 import { whatsappHref } from '@/lib/whatsapp';
+import { assetPath } from '@/lib/asset-path';
 
 export function SiteHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ export function SiteHeader() {
     <header className={styles.header}>
       <a className={styles.brand} href="#inicio" aria-label="Vivacemare, início">
         <Image
-          src="/assets/logo-vivace-light.svg"
+          src={assetPath('/assets/logo-vivace-light.svg')}
           alt="Vivacemare"
           width={166}
           height={34}
@@ -29,7 +30,7 @@ export function SiteHeader() {
         />
         <span className={styles.brandDivider} aria-hidden="true" />
         <Image
-          src="/assets/logo-safra-light.svg"
+          src={assetPath('/assets/logo-safra-light.svg')}
           alt="Safra Invest"
           width={166}
           height={34}

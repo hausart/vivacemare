@@ -4,11 +4,12 @@ import styles from './hero.module.css';
 import { whatsappHref } from '@/lib/whatsapp';
 import { RevealTitle } from './reveal-title';
 import { RevealBlock } from './reveal-block';
+import { assetPath } from '@/lib/asset-path';
 
 export function Hero() {
   return (
     <section className={styles.hero} id="inicio" aria-labelledby="hero-title">
-      <Image src="/assets/hero.webp" alt="" fill priority sizes="100vw" className={styles.backgroundImage} aria-hidden="true" />
+      <Image src={assetPath('/assets/hero.webp')} alt="" fill priority sizes="100vw" className={styles.backgroundImage} aria-hidden="true" />
       <div className={styles.overlay} aria-hidden="true" />
       <div className={styles.shell}>
         <RevealBlock className={styles.copy}>

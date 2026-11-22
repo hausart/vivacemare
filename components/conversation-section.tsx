@@ -3,12 +3,13 @@
 import { whatsappHref } from '@/lib/whatsapp';
 import { RevealBlock } from './reveal-block';
 import styles from './conversation-section.module.css';
+import { assetPath } from '@/lib/asset-path';
 
 export function ConversationSection() {
   return (
     <section className={styles.section} id="conversa" aria-labelledby="conversation-title">
       <video className={styles.video} autoPlay muted loop playsInline preload="metadata" aria-hidden="true">
-        <source src="/assets/footer/video-footer.mp4" type="video/mp4" />
+        <source src={assetPath('/assets/footer/video-footer.mp4')} type="video/mp4" />
       </video>
       <div className={styles.overlay} aria-hidden="true" />
       <RevealBlock className={styles.content}>
