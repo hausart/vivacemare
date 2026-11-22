@@ -13,6 +13,36 @@ export const metadata: Metadata = {
   title: 'Vivacemare | Assessoria de investimentos',
   description:
     'Assessoria de investimentos com visão 360° para pessoas físicas, empresas e clientes Private.',
+  metadataBase: new URL('https://sidneirocha.github.io/vivacemare/'),
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://sidneirocha.github.io/vivacemare/',
+    siteName: 'Vivacemare',
+    title: 'Vivacemare | Assessoria de investimentos',
+    description:
+      'Assessoria de investimentos com visão 360° para pessoas físicas, empresas e clientes Private.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 3840,
+        height: 2158,
+        alt: 'Vivacemare Investimentos',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Vivacemare | Assessoria de investimentos',
+    description:
+      'Assessoria de investimentos com visão 360° para pessoas físicas, empresas e clientes Private.',
+    images: ['/og-image.png'],
+  },
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
