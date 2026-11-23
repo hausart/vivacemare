@@ -136,29 +136,31 @@ export function SolutionsSection() {
     const scroller = event.currentTarget;
     dragRef.current = { startX: event.clientX, startScrollLeft: scroller.scrollLeft };
     didDragRef.current = false;
-    scroller.style.scrollSnapType = 'none';
-    if (!scroller.hasPointerCapture(event.pointerId)) scroller.setPointerCapture(event.pointerId);
-    setIsDragging(true);
   }
 
   function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
-    if (!isDragging) return;
+    if (event.pointerType !== 'mouse' || (event.buttons & 1) !== 1) return;
     const scroller = event.currentTarget;
     const distance = event.clientX - dragRef.current.startX;
     if (Math.abs(distance) > 5) {
       didDragRef.current = true;
+      scroller.style.scrollSnapType = 'none';
+      if (!scroller.hasPointerCapture(event.pointerId)) scroller.setPointerCapture(event.pointerId);
+      setIsDragging(true);
       event.preventDefault();
     }
-    scroller.scrollLeft = dragRef.current.startScrollLeft - distance;
+    if (didDragRef.current) scroller.scrollLeft = dragRef.current.startScrollLeft - distance;
   }
 
   function handlePointerUp(event: PointerEvent<HTMLDivElement>) {
     const scroller = scrollerRef.current;
-    if (scroller?.hasPointerCapture(event.pointerId)) {
+    if (didDragRef.current && scroller?.hasPointerCapture(event.pointerId)) {
       scroller.releasePointerCapture(event.pointerId);
     }
-    if (scroller) scroller.style.scrollSnapType = 'x mandatory';
-    setIsDragging(false);
+    if (didDragRef.current) {
+      if (scroller) scroller.style.scrollSnapType = 'x mandatory';
+      setIsDragging(false);
+    }
   }
 
   function scrollByCard(direction: number) {
