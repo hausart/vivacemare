@@ -129,6 +129,9 @@ export function SolutionsSection() {
   }
 
   function handlePointerDown(event: PointerEvent<HTMLDivElement>) {
+    // Let touch and pen input use the browser's native inertial scroller.
+    // The manual path is only needed for desktop mouse dragging.
+    if (event.pointerType !== 'mouse') return;
     if (event.pointerType === 'mouse' && event.button !== 0) return;
     const scroller = event.currentTarget;
     dragRef.current = { startX: event.clientX, startScrollLeft: scroller.scrollLeft };

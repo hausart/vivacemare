@@ -15,3 +15,8 @@ test('horizontal drag captures the pointer and disables snap synchronously', () 
   assert.match(component, /scroller\.style\.scrollSnapType = 'none'/);
   assert.match(component, /scroller\.style\.scrollSnapType = 'x mandatory'/);
 });
+
+test('mobile touch uses native horizontal scrolling instead of competing pointer dragging', () => {
+  assert.match(css, /\.scroller\s*\{[\s\S]*touch-action: pan-x;/);
+  assert.match(component, /if \(event\.pointerType !== 'mouse'\) return;/);
+});
