@@ -57,7 +57,7 @@ export function TeamSection() {
             <div
               className={`${styles.member} ${styles[member.position]} ${member.name === 'Vitor' ? styles.vitor : ''}`}
               key={member.name}
-              style={{ '--member-delay': `${index * 45}ms` } as CSSProperties}
+              style={{ '--member-delay': `${index * 60}ms` } as CSSProperties}
             >
               <Image className={styles.memberImage} src={member.image} alt={`${member.name}, ${member.role}`} fill sizes="(max-width: 560px) 124px, (max-width: 800px) 106px, 160px" quality={82} />
               <span className={styles.memberLabel}>
