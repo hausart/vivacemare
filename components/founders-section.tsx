@@ -32,7 +32,7 @@ export function FoundersSection() {
       <div className={styles.inner}>
         <RevealBlock className={styles.header}>
           <p className={styles.eyebrow}>QUEM ESTÁ À FRENTE</p>
-          <RevealTitle id="founders-title">Experiência que se encontra.<br className={styles.desktopBreak} /> Propósito que permanece</RevealTitle>
+          <RevealTitle id="founders-title">Experiência que se encontra,<br className={styles.desktopBreak} /> propósito que permanece</RevealTitle>
         </RevealBlock>
         <div className={styles.grid}>
           {founders.map((founder, index) => (

@@ -19,7 +19,7 @@ export const siteCopy = {
     slides: [
       {
         label: 'Relacionamento',
-        title: 'Mais do que investimentos. Uma relação de confiança',
+        title: 'Mais do que investimentos, uma relação de confiança',
         description:
           'Acreditamos que cada patrimônio carrega uma história. Por isso, nossa atuação é pautada pela ética, transparência e proximidade, com estratégias alinhadas aos objetivos, sonhos e projetos de futuro de cada cliente.',
       },
