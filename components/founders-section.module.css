@@ -1,4 +1,4 @@
-.section { position: relative; z-index: 3; background: var(--color-paper); color: var(--color-indigo); }
+.section { position: relative; z-index: 3; scroll-margin-top: 8px; background: var(--color-paper); color: var(--color-indigo); }
 .inner { width: min(calc(100% - 48px), 1240px); margin: 0 auto; padding: 92px 0 108px; }
 .header { max-width: 760px; }
 .eyebrow { margin: 0 0 18px; color: var(--color-blue); font-size: 10px; font-weight: 600; letter-spacing: 2px; line-height: 1.3; }

@@ -3,7 +3,7 @@ export const siteCopy = {
     links: [
       { label: 'A Vivacemare', href: '#vivacemare' },
       { label: 'Soluções', href: '#solucoes' },
-      { label: 'Equipe', href: '#equipe' },
+      { label: 'Equipe', href: '#socios' },
       { label: 'Na mídia', href: '#midia' },
     ],
     cta: 'Fale com um assessor',
