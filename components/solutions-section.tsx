@@ -8,6 +8,7 @@ import { whatsappHref } from '@/lib/whatsapp';
 import { assetPath } from '@/lib/asset-path';
 import { RevealTitle } from './reveal-title';
 import { RevealBlock } from './reveal-block';
+import { VehicleFinancePopup } from './vehicle-finance-popup';
 
 type Solution = (typeof siteCopy.solutions.cards)[number];
 
@@ -337,6 +338,8 @@ export function SolutionsSection() {
           </div>
         </div>
       )}
+
+      <VehicleFinancePopup />
     </section>
   );
 }

@@ -16,7 +16,7 @@ const founders = [
     name: 'Janaina Oliveira',
     role: 'SÓCIA FUNDADORA',
     image: assetPath('/assets/fundadores/janaina.png'),
-    description: 'Com mais de 25 anos de experiência no mercado financeiro, com sólida atuação em bancos e foco na identificação de soluções adequadas às necessidades dos clientes. Reconhecida por sua dedicação, visão de equipe e orientação para resultados, combina relacionamento próximo e conhecimento técnico em sua atuação. Tem formação ligada à Escola de Negócios e Seguros — ENS e certificação Ancord e Susep.',
+    description: 'Formada em Administração de Empresas pela Unimes, com formação complementar pela Escola de Negócios e Seguros (ENS) e certificações CPA-20, Ancord e Susep. Possui mais de 25 anos de experiência no mercado financeiro, com sólida atuação no setor bancário e foco na identificação de soluções adequadas às necessidades de cada cliente. Reconhecida por sua dedicação, espírito de equipe e orientação para resultados, alia conhecimento técnico, visão estratégica e relacionamento próximo para oferecer um atendimento personalizado e de excelência.',
   },
   {
     name: 'André Rocha',
