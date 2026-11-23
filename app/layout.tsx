@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
+const siteUrl = 'https://hausart.github.io/vivacemare';
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -13,18 +15,18 @@ export const metadata: Metadata = {
   title: 'Vivacemare | Assessoria de investimentos',
   description:
     'Assessoria de investimentos com visão 360° para pessoas físicas, empresas e clientes Private.',
-  metadataBase: new URL('https://hausart.github.io/vivacemare/'),
+  metadataBase: new URL(`${siteUrl}/`),
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://hausart.github.io/vivacemare/',
+    url: `${siteUrl}/`,
     siteName: 'Vivacemare',
     title: 'Vivacemare | Assessoria de investimentos',
     description:
       'Assessoria de investimentos com visão 360° para pessoas físicas, empresas e clientes Private.',
     images: [
       {
-        url: '/og-whatsapp-v3.jpg',
+        url: `${siteUrl}/og-whatsapp-v3.jpg`,
         width: 1200,
         height: 630,
         alt: 'Vivacemare Investimentos',
@@ -36,12 +38,12 @@ export const metadata: Metadata = {
     title: 'Vivacemare | Assessoria de investimentos',
     description:
       'Assessoria de investimentos com visão 360° para pessoas físicas, empresas e clientes Private.',
-    images: ['/og-whatsapp-v3.jpg'],
+    images: [`${siteUrl}/og-whatsapp-v3.jpg`],
   },
   icons: {
-    icon: '/favicon.png',
-    shortcut: '/favicon.png',
-    apple: '/apple-touch-icon.png',
+    icon: `${siteUrl}/favicon.png`,
+    shortcut: `${siteUrl}/favicon.png`,
+    apple: `${siteUrl}/apple-touch-icon.png`,
   },
 };
 
