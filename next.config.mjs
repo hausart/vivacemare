@@ -2,9 +2,9 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: process.env.GITHUB_ACTIONS ? '/vivacemare' : '',
+  basePath: '',
   env: {
-    NEXT_PUBLIC_BASE_PATH: process.env.GITHUB_ACTIONS ? '/vivacemare' : '',
+    NEXT_PUBLIC_BASE_PATH: '',
   },
   images: {
     unoptimized: true,
