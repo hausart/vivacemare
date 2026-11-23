@@ -3,7 +3,7 @@
 .eyebrow { margin: 0 0 14px; color: var(--color-gold-dark, #8c6c3f); font-size: 11px; font-weight: 600; letter-spacing: 2px; line-height: 1.3; text-transform: uppercase; }
 .header h2 { max-width: 620px; margin: 0; font-size: 48px; font-weight: 400; letter-spacing: -1.8px; line-height: 1.13; }
 .description { max-width: 570px; margin: 12px 0 0; color: var(--color-ink); font-size: 17px; letter-spacing: -0.05px; line-height: 1.6; }
-.scrollerShell { position: relative; overflow: hidden; margin-top: 34px; }
+.scrollerShell { position: relative; overflow: hidden; margin-top: 56px; }
 .scrollerShell::before, .scrollerShell::after { position: absolute; z-index: 2; top: 0; bottom: 0; width: 64px; content: ''; pointer-events: none; }
 .scrollerShell::before { left: 0; background: linear-gradient(90deg, var(--color-paper) 0%, rgb(255 254 251 / 74%) 40%, rgb(255 254 251 / 0%) 100%); }
 .scrollerShell::after { right: 0; background: linear-gradient(270deg, var(--color-paper) 0%, rgb(255 254 251 / 74%) 40%, rgb(255 254 251 / 0%) 100%); }
