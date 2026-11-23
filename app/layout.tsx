@@ -13,11 +13,11 @@ export const metadata: Metadata = {
   title: 'Vivacemare | Assessoria de investimentos',
   description:
     'Assessoria de investimentos com visão 360° para pessoas físicas, empresas e clientes Private.',
-  metadataBase: new URL('https://sidneirocha.github.io/vivacemare/'),
+  metadataBase: new URL('https://hausart.github.io/vivacemare/'),
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://sidneirocha.github.io/vivacemare/',
+    url: 'https://hausart.github.io/vivacemare/',
     siteName: 'Vivacemare',
     title: 'Vivacemare | Assessoria de investimentos',
     description:
