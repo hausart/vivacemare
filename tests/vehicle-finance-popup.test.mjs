@@ -22,10 +22,13 @@ test('vehicle popup uses the supplied image and links to an advisor on WhatsApp'
   assert.match(css, /padding:\s*0 48px;/);
 });
 
-test('vehicle popup has a wide desktop layout and a compact mobile layout', () => {
+test('vehicle popup has a wide desktop layout and a content-sized compact mobile layout', () => {
   assert.match(css, /width:\s*min\(1200px/);
   assert.match(css, /@media\s*\(max-width:\s*680px\)/);
-  assert.match(css, /grid-template-rows:\s*minmax\(180px, 30svh\) minmax\(0, 1fr\)/);
+  assert.match(css, /grid-template-rows:\s*minmax\(180px, 30svh\) auto/);
+  assert.match(css, /justify-content:\s*flex-start;/);
+  assert.match(css, /padding:\s*16px 24px 20px;/);
+  assert.match(css, /margin-top:\s*16px;/);
 });
 
 test('Janaina biography is updated with the supplied education and certifications', () => {

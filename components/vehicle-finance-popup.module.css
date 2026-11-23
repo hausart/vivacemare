@@ -163,7 +163,7 @@
 @media (max-width: 680px) {
   .dialog {
     width: min(calc(100vw - 24px), 520px);
-    height: min(760px, calc(100dvh - 24px));
+    height: auto;
     max-height: calc(100dvh - 24px);
     border-radius: 20px;
     background: var(--color-paper);
@@ -171,7 +171,7 @@
   }
 
   .dialog[open] {
-    grid-template-rows: minmax(180px, 30svh) minmax(0, 1fr);
+    grid-template-rows: minmax(180px, 30svh) auto;
   }
 
   .media {
@@ -191,13 +191,16 @@
   .content {
     grid-row: 2;
     width: 100%;
+    height: auto;
     min-height: 0;
+    max-height: calc(70dvh - 24px);
     overflow-y: auto;
-    padding: 24px;
+    justify-content: flex-start;
+    padding: 16px 24px 20px;
   }
 
   .eyebrow {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     color: var(--color-gold-dark, #8c6c3f);
   }
 
@@ -207,7 +210,7 @@
   }
 
   .description {
-    margin-top: 14px;
+    margin-top: 12px;
     color: var(--color-ink);
     font-size: 15px;
     line-height: 1.55;
@@ -216,7 +219,7 @@
   .cta {
     width: 100%;
     flex: 0 0 auto;
-    margin-top: 20px;
+    margin-top: 16px;
   }
 
   .cta:hover,
