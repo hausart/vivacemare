@@ -17,6 +17,10 @@ test('horizontal drag captures the pointer and disables snap synchronously', () 
 });
 
 test('mobile touch uses native horizontal scrolling instead of competing pointer dragging', () => {
-  assert.match(css, /\.scroller\s*\{[\s\S]*touch-action: pan-x;/);
+  assert.match(css, /\.scroller\s*\{[\s\S]*touch-action: pan-x pan-y;/);
   assert.match(component, /if \(event\.pointerType !== 'mouse'\) return;/);
+});
+
+test('expanded card does not create a vertical scrolling trap', () => {
+  assert.match(css, /\.expandedCard\s*\{[\s\S]*overflow: visible;/);
 });
