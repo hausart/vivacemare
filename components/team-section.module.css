@@ -6,7 +6,7 @@
 .desktopBreak { display: block; }
 .stage { position: relative; width: min(100%, 1240px); height: 760px; margin: -92px auto 0; }
 .symbol { position: absolute; z-index: 4; top: 49%; left: 50%; display: block; width: 260px; height: 260px; object-fit: contain; transform: translate(-50%, -50%) scale(1); opacity: 1; }
-.member { position: absolute; z-index: 2; top: var(--final-top); left: var(--final-left); width: 160px; height: 160px; overflow: visible; border-radius: 50%; opacity: 1; transform: translate3d(-50%, -50%, 0) scale(1); backface-visibility: hidden; will-change: transform, opacity; }
+.member { position: absolute; z-index: 2; top: var(--final-top); left: var(--final-left); width: 160px; height: 160px; overflow: visible; border-radius: 50%; opacity: 0; transform: translate3d(calc(-50% + var(--orbit-x)), calc(-50% + var(--orbit-y)), 0) scale(.62); backface-visibility: hidden; will-change: transform, opacity; }
 .memberImage { display: block; overflow: hidden; border-radius: 50%; object-fit: cover; object-position: 50% 24%; }
 .vitor .memberImage { object-position: 50% 8%; }
 .memberLabel { position: absolute; right: 50%; bottom: -42px; display: grid; width: max-content; max-width: 170px; padding: 8px 11px; border-radius: 10px; background: rgb(16 58 98 / 92%); color: #fff; opacity: 0; transform: translate(50%, 4px); transition: opacity 180ms ease, transform 180ms ease; pointer-events: none; text-align: center; }
