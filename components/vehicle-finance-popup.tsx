@@ -9,6 +9,7 @@ import styles from './vehicle-finance-popup.module.css';
 export function VehicleFinancePopup() {
   const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
   const hasTriggeredRef = useRef(false);
 
   useEffect(() => {
@@ -45,6 +46,7 @@ export function VehicleFinancePopup() {
     const dialog = dialogRef.current;
     if (!dialog || !isOpen || dialog.open) return;
     dialog.showModal();
+    closeButtonRef.current?.focus({ preventScroll: true });
   }, [isOpen]);
 
   function closeDialog() {
@@ -85,7 +87,7 @@ export function VehicleFinancePopup() {
         </a>
       </div>
 
-      <button className={styles.closeButton} type="button" onClick={closeDialog} aria-label="Fechar oferta de financiamento de veículos">
+      <button ref={closeButtonRef} className={styles.closeButton} type="button" onClick={closeDialog} aria-label="Fechar oferta de financiamento de veículos">
         ×
       </button>
     </dialog>
