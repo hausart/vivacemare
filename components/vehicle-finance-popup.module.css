@@ -75,6 +75,10 @@
   text-wrap: balance;
 }
 
+.content h2:focus {
+  outline: none;
+}
+
 .description {
   max-width: 500px;
   margin: 20px 0 0;
@@ -163,7 +167,7 @@
 @media (max-width: 680px) {
   .dialog {
     width: min(calc(100vw - 24px), 520px);
-    height: auto;
+    height: fit-content;
     max-height: calc(100dvh - 24px);
     border-radius: 20px;
     background: var(--color-paper);

@@ -26,6 +26,8 @@ test('vehicle popup has a wide desktop layout and a content-sized compact mobile
   assert.match(css, /width:\s*min\(1200px/);
   assert.match(css, /@media\s*\(max-width:\s*680px\)/);
   assert.match(css, /grid-template-rows:\s*minmax\(180px, 30svh\) auto/);
+  assert.match(css, /height:\s*fit-content;/);
+  assert.match(css, /\.content h2:focus\s*\{\s*outline:\s*none;/);
   assert.match(css, /justify-content:\s*flex-start;/);
   assert.match(css, /padding:\s*16px 24px 20px;/);
   assert.match(css, /margin-top:\s*16px;/);
