@@ -35,10 +35,8 @@ export function TeamSection() {
     };
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) enter();
-    }, { threshold: 0.01, rootMargin: '0px 0px 12% 0px' });
+    }, { threshold: 0.01, rootMargin: '0px 0px -18% 0px' });
     observer.observe(section);
-    const rect = section.getBoundingClientRect();
-    if (rect.bottom > 0 && rect.top < window.innerHeight) requestAnimationFrame(enter);
     return () => observer.disconnect();
   }, []);
 

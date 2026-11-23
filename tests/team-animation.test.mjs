@@ -12,7 +12,8 @@ test('team reveal avoids expensive blur and long staggered entrance', () => {
   assert.match(css, /animation:\s*orbitIn\s+720ms/);
   assert.match(css, /animation:\s*teamMobileReveal\s+480ms/);
   assert.doesNotMatch(component, /index \* 90/);
-  assert.match(component, /rootMargin:\s*'0px 0px 12% 0px'/);
+  assert.match(component, /rootMargin:\s*'0px 0px -18% 0px'/);
+  assert.doesNotMatch(component, /requestAnimationFrame\(enter\)/);
 });
 
 test('desktop spheres animate out from behind the central logo', () => {
