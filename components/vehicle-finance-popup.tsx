@@ -9,7 +9,7 @@ import styles from './vehicle-finance-popup.module.css';
 export function VehicleFinancePopup() {
   const [isOpen, setIsOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
-  const closeButtonRef = useRef<HTMLButtonElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
   const hasTriggeredRef = useRef(false);
 
   useEffect(() => {
@@ -46,7 +46,7 @@ export function VehicleFinancePopup() {
     const dialog = dialogRef.current;
     if (!dialog || !isOpen || dialog.open) return;
     dialog.showModal();
-    closeButtonRef.current?.focus({ preventScroll: true });
+    titleRef.current?.focus({ preventScroll: true });
   }, [isOpen]);
 
   function closeDialog() {
@@ -77,7 +77,7 @@ export function VehicleFinancePopup() {
 
       <div className={styles.content}>
         <p className={styles.eyebrow}>CRÉDITO PARA VEÍCULOS</p>
-        <h2 id="vehicle-finance-title">Seu próximo carro, com um plano alinhado ao seu momento</h2>
+        <h2 ref={titleRef} id="vehicle-finance-title" tabIndex={-1}>Seu próximo carro, com um plano alinhado ao seu momento</h2>
         <p className={styles.description} id="vehicle-finance-description">
           Conte com uma assessoria próxima para avaliar alternativas de financiamento e organizar a compra do seu veículo de acordo com seus objetivos e planejamento.
         </p>
@@ -87,7 +87,7 @@ export function VehicleFinancePopup() {
         </a>
       </div>
 
-      <button ref={closeButtonRef} className={styles.closeButton} type="button" onClick={closeDialog} aria-label="Fechar oferta de financiamento de veículos">
+      <button className={styles.closeButton} type="button" onClick={closeDialog} aria-label="Fechar oferta de financiamento de veículos">
         ×
       </button>
     </dialog>

@@ -18,7 +18,7 @@ test('vehicle popup uses the supplied image and links to an advisor on WhatsApp'
   assert.match(component, /financiamento-veiculo\.webp/);
   assert.match(component, /whatsappHref\('financiamento de veículo'\)/);
   assert.match(component, /Falar com um assessor/);
-  assert.match(component, /closeButtonRef\.current\?\.focus\(\{ preventScroll: true \}\)/);
+  assert.match(component, /titleRef\.current\?\.focus\(\{ preventScroll: true \}\)/);
   assert.match(css, /padding:\s*0 48px;/);
 });
 
