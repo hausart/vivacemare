@@ -133,6 +133,8 @@ export function SolutionsSection() {
     const scroller = event.currentTarget;
     dragRef.current = { startX: event.clientX, startScrollLeft: scroller.scrollLeft };
     didDragRef.current = false;
+    scroller.style.scrollSnapType = 'none';
+    if (!scroller.hasPointerCapture(event.pointerId)) scroller.setPointerCapture(event.pointerId);
     setIsDragging(true);
   }
 
@@ -142,15 +144,17 @@ export function SolutionsSection() {
     const distance = event.clientX - dragRef.current.startX;
     if (Math.abs(distance) > 5) {
       didDragRef.current = true;
-      if (!scroller.hasPointerCapture(event.pointerId)) scroller.setPointerCapture(event.pointerId);
+      event.preventDefault();
     }
     scroller.scrollLeft = dragRef.current.startScrollLeft - distance;
   }
 
   function handlePointerUp(event: PointerEvent<HTMLDivElement>) {
-    if (scrollerRef.current?.hasPointerCapture(event.pointerId)) {
-      scrollerRef.current.releasePointerCapture(event.pointerId);
+    const scroller = scrollerRef.current;
+    if (scroller?.hasPointerCapture(event.pointerId)) {
+      scroller.releasePointerCapture(event.pointerId);
     }
+    if (scroller) scroller.style.scrollSnapType = 'x mandatory';
     setIsDragging(false);
   }
 

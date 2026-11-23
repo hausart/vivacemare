@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "test:animation": "node --test tests/team-animation.test.mjs"
+    "test:animation": "node --test tests/team-animation.test.mjs",
+    "test:solutions": "node --test tests/solutions-interaction.test.mjs"
   },
   "dependencies": {
     "next": "16.4.5",
