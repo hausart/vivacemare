@@ -26,9 +26,6 @@ export function VehicleFinancePopup() {
           hasTriggeredRef.current = true;
           setIsOpen(true);
         }, 3000);
-      } else if (!isVisible && delayTimer !== undefined && !hasTriggeredRef.current) {
-        window.clearTimeout(delayTimer);
-        delayTimer = undefined;
       }
     };
 

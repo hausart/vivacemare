@@ -6,12 +6,17 @@ const component = await readFile(new URL('../components/vehicle-finance-popup.ts
 const css = await readFile(new URL('../components/vehicle-finance-popup.module.css', import.meta.url), 'utf8');
 const founders = await readFile(new URL('../components/founders-section.tsx', import.meta.url), 'utf8');
 
-test('vehicle popup waits three seconds after the solutions section enters view and fires once', () => {
+test('vehicle popup keeps its three-second delay running after leaving solutions', () => {
+  const visibilityHandler = component.slice(
+    component.indexOf('const updateVisibility'),
+    component.indexOf("window.addEventListener('scroll', updateVisibility"),
+  );
   assert.match(component, /getBoundingClientRect\(\)/);
   assert.match(component, /addEventListener\('scroll', updateVisibility/);
   assert.match(component, /setTimeout\([\s\S]*?3000\)/);
   assert.match(component, /hasTriggeredRef\.current/);
-  assert.match(component, /clearTimeout\(delayTimer\)/);
+  assert.doesNotMatch(visibilityHandler, /clearTimeout\(delayTimer\)/);
+  assert.match(component, /if \(delayTimer !== undefined\) window\.clearTimeout\(delayTimer\)/);
 });
 
 test('vehicle popup uses the supplied image and links to an advisor on WhatsApp', () => {
