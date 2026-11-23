@@ -6,15 +6,15 @@ import styles from './team-section.module.css';
 import { assetPath } from '@/lib/asset-path';
 
 const team = [
-  { name: 'Diego Costa', role: 'Sócio', image: assetPath('/assets/equipe/originals/diego-costa.jpg'), position: 'top-left' },
-  { name: 'Yuri França', role: 'Head de Câmbio', image: assetPath('/assets/equipe/originals/yuri-franca.jpg'), position: 'top-right' },
-  { name: 'Aline Serra', role: 'Head de Crédito', image: assetPath('/assets/equipe/originals/aline-serra.jpg'), position: 'middle-left' },
-  { name: 'Vitor', role: 'Assessor de Investimentos', image: assetPath('/assets/equipe/originals/vitor.webp'), position: 'middle-right' },
-  { name: 'Rivaldo Amaral', role: 'Assessor de Investimentos', image: assetPath('/assets/equipe/originals/rivaldo-amaral.jpg'), position: 'lower-left' },
-  { name: 'Beatriz Novaes', role: 'Assessora de Investimentos', image: assetPath('/assets/equipe/originals/beatriz-novaes.jpg'), position: 'center-right' },
-  { name: 'Pedro Lobato', role: 'Assessor de Investimentos', image: assetPath('/assets/equipe/originals/pedro-lobato.jpg'), position: 'bottom-left' },
-  { name: 'Lucas Franco', role: 'Head de Consórcios', image: assetPath('/assets/equipe/originals/lucas-franco.jpg'), position: 'bottom-right' },
-  { name: 'Laís Alves', role: 'Assessora de Investimentos', image: assetPath('/assets/equipe/originals/lais-alves.jpg'), position: 'lower-right' },
+  { name: 'Diego Costa', role: 'Sócio', image: assetPath('/assets/equipe/optimized/diego-costa.webp'), position: 'top-left' },
+  { name: 'Yuri França', role: 'Head de Câmbio', image: assetPath('/assets/equipe/optimized/yuri-franca.webp'), position: 'top-right' },
+  { name: 'Aline Serra', role: 'Head de Crédito', image: assetPath('/assets/equipe/optimized/aline-serra.webp'), position: 'middle-left' },
+  { name: 'Vitor', role: 'Assessor de Investimentos', image: assetPath('/assets/equipe/optimized/vitor.webp'), position: 'middle-right' },
+  { name: 'Rivaldo Amaral', role: 'Assessor de Investimentos', image: assetPath('/assets/equipe/optimized/rivaldo-amaral.webp'), position: 'lower-left' },
+  { name: 'Beatriz Novaes', role: 'Assessora de Investimentos', image: assetPath('/assets/equipe/optimized/beatriz-novaes.webp'), position: 'center-right' },
+  { name: 'Pedro Lobato', role: 'Assessor de Investimentos', image: assetPath('/assets/equipe/optimized/pedro-lobato.webp'), position: 'bottom-left' },
+  { name: 'Lucas Franco', role: 'Head de Consórcios', image: assetPath('/assets/equipe/optimized/lucas-franco.webp'), position: 'bottom-right' },
+  { name: 'Laís Alves', role: 'Assessora de Investimentos', image: assetPath('/assets/equipe/optimized/lais-alves.webp'), position: 'lower-right' },
 ] as const;
 
 export function TeamSection() {
