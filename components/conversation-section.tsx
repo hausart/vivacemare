@@ -14,7 +14,7 @@ export function ConversationSection() {
       <div className={styles.overlay} aria-hidden="true" />
       <RevealBlock className={styles.content}>
         <p className={styles.eyebrow}>VAMOS CONVERSAR?</p>
-        <h2 id="conversation-title">O próximo capítulo da sua história começa com uma conversa.</h2>
+        <h2 id="conversation-title">O próximo capítulo da sua história começa com uma conversa</h2>
         <p className={styles.description}>Conheça a equipe Vivacemare e converse sobre seus objetivos.</p>
         <a className={styles.cta} href={whatsappHref('agende uma conversa')}>
           Agende uma conversa

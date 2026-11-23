@@ -9,7 +9,7 @@
 
 .inner {
   display: grid;
-  grid-template-columns: minmax(0, 557px) minmax(0, 662px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
   gap: 24px;
   width: min(calc(100% - 48px), 1244px);
   min-height: 700px;
@@ -34,13 +34,14 @@
 }
 
 .content h2 {
-  max-width: 557px;
+  max-width: 610px;
   margin: 0;
   color: #182a3b;
-  font-size: clamp(40px, 3.34vw, 48px);
+  font-size: clamp(40px, 3.15vw, 46px);
   font-weight: 400;
   letter-spacing: -1.8px;
   line-height: 1.13;
+  text-wrap: balance;
 }
 
 .description {

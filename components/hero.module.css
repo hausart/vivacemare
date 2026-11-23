@@ -2,8 +2,8 @@
 .backgroundImage { z-index: -2; object-fit: cover; object-position: center; animation: heroZoom 14s ease-in-out infinite alternate; transform-origin: center; will-change: transform; }
 .overlay { position: absolute; z-index: -1; inset: 0; background: linear-gradient(250.709deg, rgb(29 33 67 / 0%) 42.055%, rgb(8 28 54 / 73%) 78.921%); mix-blend-mode: multiply; }
 .shell { position: relative; width: min(calc(100% - 48px), 1240px); min-height: inherit; margin: 0 auto; }
-.copy { position: relative; z-index: 3; width: 620px; padding-top: 369px; }
-.copy h1 { max-width: 620px; margin: 0; font-family: var(--font-display); font-size: 75px; font-weight: 300; letter-spacing: -3.5px; line-height: 1.08; text-wrap: balance; }
+.copy { position: relative; z-index: 3; width: 780px; padding-top: 369px; }
+.copy h1 { max-width: 780px; margin: 0; font-family: var(--font-display); font-size: clamp(64px, 5.2vw, 72px); font-weight: 300; letter-spacing: -3.5px; line-height: 1.08; text-wrap: balance; }
 .description { width: 570px; margin: 7px 0 0; color: #ced9e2; font-size: 17px; font-weight: 400; letter-spacing: -0.05px; line-height: 1.6; }
 .primaryCta { position: relative; display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 0; margin-top: 36px; padding: 0 48px; border: 1px solid transparent; border-radius: 16px; background: var(--color-gold); color: #0e2339; font-size: 16px; font-weight: 400; letter-spacing: -0.05px; line-height: 1.2; text-decoration: none; transition: background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, color 180ms ease, transform 180ms ease; }
 .primaryCta:hover, .primaryCta:focus-visible { border-color: rgb(255 255 255 / 72%); background: transparent; color: #fff; box-shadow: 0 8px 20px rgb(3 20 39 / 20%); transform: translateY(-1px); }
