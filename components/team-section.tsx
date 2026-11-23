@@ -19,12 +19,14 @@ const team = [
 
 export function TeamSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const symbolRef = useRef<HTMLImageElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [hasEntered, setHasEntered] = useState(false);
 
   useEffect(() => {
     const section = sectionRef.current;
-    if (!section) return;
+    const symbol = symbolRef.current;
+    if (!section || !symbol) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setHasEntered(true);
       return;
@@ -33,10 +35,11 @@ export function TeamSection() {
       setHasEntered(true);
       observer.disconnect();
     };
+    const mobileGrid = window.matchMedia('(max-width: 560px)').matches;
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) enter();
-    }, { threshold: 0.01, rootMargin: '0px 0px -18% 0px' });
-    observer.observe(section);
+    }, { threshold: 0.01 });
+    observer.observe(mobileGrid ? section : symbol);
     return () => observer.disconnect();
   }, []);
 
@@ -49,7 +52,7 @@ export function TeamSection() {
         </div>
 
         <div className={styles.stage} aria-label="Integrantes da equipe">
-          <Image className={styles.symbol} src={assetPath('/assets/equipe/logoequipe.svg')} alt="" width={214} height={222} />
+          <Image ref={symbolRef} className={styles.symbol} src={assetPath('/assets/equipe/logoequipe.svg')} alt="" width={214} height={222} />
           {team.map((member, index) => (
             <div
               className={`${styles.member} ${styles[member.position]} ${member.name === 'Vitor' ? styles.vitor : ''}`}
