@@ -18,27 +18,32 @@ const team = [
 ] as const;
 
 export function TeamSection() {
+  const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const [hasEntered, setHasEntered] = useState(false);
 
   useEffect(() => {
-    const title = titleRef.current;
-    if (!title) return;
+    const section = sectionRef.current;
+    if (!section) return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setHasEntered(true);
       return;
     }
-    const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
+    const enter = () => {
       setHasEntered(true);
       observer.disconnect();
-    }, { threshold: 0.01, rootMargin: '-25% 0px -25% 0px' });
-    observer.observe(title);
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) enter();
+    }, { threshold: 0.01, rootMargin: '0px 0px 12% 0px' });
+    observer.observe(section);
+    const rect = section.getBoundingClientRect();
+    if (rect.bottom > 0 && rect.top < window.innerHeight) requestAnimationFrame(enter);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section className={`${styles.section} ${hasEntered ? styles.isEntered : ''}`} id="time" aria-labelledby="team-title">
+    <section ref={sectionRef} className={`${styles.section} ${hasEntered ? styles.isEntered : ''}`} id="time" aria-labelledby="team-title">
       <div className={styles.inner}>
         <div className={styles.heading}>
           <p className={styles.eyebrow}>NOSSO TIME</p>
@@ -51,9 +56,9 @@ export function TeamSection() {
             <div
               className={`${styles.member} ${styles[member.position]} ${member.name === 'Vitor' ? styles.vitor : ''}`}
               key={member.name}
-              style={{ '--member-delay': `${index * 90}ms` } as CSSProperties}
+              style={{ '--member-delay': `${index * 45}ms` } as CSSProperties}
             >
-              <Image className={styles.memberImage} src={member.image} alt={`${member.name}, ${member.role}`} fill sizes="(max-width: 560px) 148px, (max-width: 800px) 184px, 252px" quality={100} />
+              <Image className={styles.memberImage} src={member.image} alt={`${member.name}, ${member.role}`} fill sizes="(max-width: 560px) 124px, (max-width: 800px) 106px, 160px" quality={82} />
               <span className={styles.memberLabel}>
                 <strong>{member.name}</strong>
                 <small>{member.role}</small>

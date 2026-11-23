@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:animation": "node --test tests/team-animation.test.mjs"
   },
   "dependencies": {
     "next": "16.4.5",
