@@ -6,10 +6,10 @@ const component = await readFile(new URL('../components/vehicle-finance-popup.ts
 const css = await readFile(new URL('../components/vehicle-finance-popup.module.css', import.meta.url), 'utf8');
 const founders = await readFile(new URL('../components/founders-section.tsx', import.meta.url), 'utf8');
 
-test('vehicle popup waits two seconds after the solutions section enters view and fires once', () => {
+test('vehicle popup waits three seconds after the solutions section enters view and fires once', () => {
   assert.match(component, /getBoundingClientRect\(\)/);
   assert.match(component, /addEventListener\('scroll', updateVisibility/);
-  assert.match(component, /setTimeout\([\s\S]*?2000\)/);
+  assert.match(component, /setTimeout\([\s\S]*?3000\)/);
   assert.match(component, /hasTriggeredRef\.current/);
   assert.match(component, /clearTimeout\(delayTimer\)/);
 });
